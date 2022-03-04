@@ -111,6 +111,7 @@ type IssueFields struct {
 	Project                       Project           `json:"project,omitempty" structs:"project,omitempty"`
 	Environment                   string            `json:"environment,omitempty" structs:"environment,omitempty"`
 	Resolution                    *Resolution       `json:"resolution,omitempty" structs:"resolution,omitempty"`
+	Votes                         *Votes            `json:"votes,omitempty" structs:"votes,omitempty"`
 	Priority                      *Priority         `json:"priority,omitempty" structs:"priority,omitempty"`
 	Resolutiondate                Time              `json:"resolutiondate,omitempty" structs:"resolutiondate,omitempty"`
 	Created                       Time              `json:"created,omitempty" structs:"created,omitempty"`
@@ -145,6 +146,10 @@ type IssueFields struct {
 	AggregateTimeSpent            int               `json:"aggregatetimespent,omitempty" structs:"aggregatetimespent,omitempty"`
 	AggregateTimeEstimate         int               `json:"aggregatetimeestimate,omitempty" structs:"aggregatetimeestimate,omitempty"`
 	Unknowns                      tcontainer.MarshalMap
+}
+
+type Votes struct {
+	Votes int `json:"votes,omitempty" structs:"votes,omitempty"`
 }
 
 // MarshalJSON is a custom JSON marshal function for the IssueFields structs.
